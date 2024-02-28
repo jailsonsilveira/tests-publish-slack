@@ -35,7 +35,7 @@ jobs:
           file_path: 'output/my.html'
           initial_comment: 'Arquivo contendo os logs'
       - name: Problema
-        if: success() || failure()
+        if: failure()
         uses: MeilCli/slack-upload-file@v4
         with:
           slack_token: ${{ secrets.SLACK_TOKEN }}
