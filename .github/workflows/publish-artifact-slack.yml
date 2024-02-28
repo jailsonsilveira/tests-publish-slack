@@ -40,7 +40,8 @@ jobs:
         with:
           slack_token: ${{ secrets.SLACK_TOKEN }}
           channel_id: C06M28ZA5UM
-          file_type: "text"
+          content: 'Deu ruim'
+          file_type: 'text'
           file_name: 'text.txt'
           title: 'title of file'
           initial_comment: 'Deu'
