@@ -43,7 +43,6 @@ jobs:
         with:
           slack_token: ${{ secrets.SLACK_TOKEN }}
           channel_id: C06M28ZA5UM
-          content: 'file content'
           file_type: 'html'
           file_name: 'output/my-file.html'
           title: 'title of file'
