@@ -1,4 +1,4 @@
-name: Step 2, Add a job
+name: WorkFlow
 
 on:
   workflow_dispatch:
@@ -15,15 +15,13 @@ jobs:
 
     if: ${{ !github.event.repository.is_template }}
 
-    # We'll run Ubuntu for performance instead of Mac or Windows
     runs-on: ubuntu-latest
 
     steps:
-      # We'll need to check out the repository so that we can edit the README
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0 # Let's get all the branches
+          fetch-depth: 0
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -36,3 +34,12 @@ jobs:
           channel_id: C06M28ZA5UM
           file_path: 'output/my.html'
           initial_comment: 'Arquivo contendo os logs'
+      - name: Problema
+        if: success() || failure()
+        uses: MeilCli/slack-upload-file@v4
+        with:
+          slack_token: ${{ secrets.SLACK_TOKEN }}
+          channel_id: C06M28ZA5UM
+          file_type: "text"
+          file_name: 'text.txt'
+          initial_comment: 'Deu ruimm'
