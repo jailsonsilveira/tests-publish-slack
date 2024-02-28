@@ -42,7 +42,7 @@ jobs:
       - uses: MeilCli/slack-upload-file@v4
         with:
           slack_token: ${{ secrets.SLACK_TOKEN }}
-          channel_id: ${{ secrets.SLACK_CHANNEL_ID }}
+          channel_id: C06M28ZA5UM
           content: 'file content'
           file_type: 'html'
           file_name: 'output/my-file.html'
