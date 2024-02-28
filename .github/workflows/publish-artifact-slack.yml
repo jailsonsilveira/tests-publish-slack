@@ -42,4 +42,5 @@ jobs:
           channel_id: C06M28ZA5UM
           file_type: "text"
           file_name: 'text.txt'
-          initial_comment: 'Deu ruimm'
+          title: 'title of file'
+          initial_comment: 'Deu'
