@@ -29,7 +29,7 @@ jobs:
       - name: Check workflow contents, jobs
         run: "cp my.html /tmp/my_file.html"
       - name: Upload Artifact
-      - uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: my-artifact
           path: path/to/artifact/
