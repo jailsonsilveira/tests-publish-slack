@@ -29,17 +29,8 @@ jobs:
         with:
           name: my-file.html
           path: output
-  sendToSlack:
-    name: Send to slack
-    needs: create_file
-
-    if: ${{ !github.event.repository.is_template }}
-
-    # We'll run Ubuntu for performance instead of Mac or Windows
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: MeilCli/slack-upload-file@v4
+      - name: Send to Slack
+        uses: MeilCli/slack-upload-file@v4
         with:
           slack_token: ${{ secrets.SLACK_TOKEN }}
           channel_id: C06M28ZA5UM
