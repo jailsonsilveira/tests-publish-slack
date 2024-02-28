@@ -32,7 +32,7 @@ jobs:
         with:
           slack_token: ${{ secrets.SLACK_TOKEN }}
           channel_id: C06M28ZA5UM
-          file_path: 'output/my.html'
+          file_path: 'outputs/my.html'
           initial_comment: 'Arquivo contendo os logs'
       - name: Problema
         if: failure()
